@@ -1,0 +1,278 @@
+.audio-recorder {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.recorder-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.recorder-header h3 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 1.3rem;
+}
+
+.recording-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #e74c3c;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.recording-dot {
+  width: 8px;
+  height: 8px;
+  background: #e74c3c;
+  border-radius: 50%;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.recorder-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.audio-visualizer {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.visualizer-container {
+  display: flex;
+  align-items: end;
+  gap: 3px;
+  height: 60px;
+}
+
+.visualizer-bar {
+  width: 4px;
+  background: linear-gradient(to top, #3498db, #2ecc71);
+  border-radius: 2px;
+  transition: height 0.1s ease;
+  min-height: 5px;
+}
+
+.control-buttons {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.record-btn {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+}
+
+.record-btn:hover:not(:disabled) {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(231, 76, 60, 0.4);
+}
+
+.record-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.record-btn.recording {
+  background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
+  animation: recording-pulse 2s infinite;
+}
+
+@keyframes recording-pulse {
+  0%, 100% { box-shadow: 0 4px 12px rgba(149, 165, 166, 0.3); }
+  50% { box-shadow: 0 4px 20px rgba(149, 165, 166, 0.6); }
+}
+
+.record-icon,
+.stop-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recording-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.timer {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  font-family: 'Courier New', monospace;
+}
+
+.audio-level {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.level-label {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  min-width: 40px;
+}
+
+.level-bar {
+  flex: 1;
+  height: 8px;
+  background: #ecf0f1;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.level-fill {
+  height: 100%;
+  background: linear-gradient(to right, #2ecc71, #f39c12, #e74c3c);
+  transition: width 0.1s ease;
+  border-radius: 4px;
+}
+
+.permission-request {
+  text-align: center;
+  padding: 40px 20px;
+  color: #7f8c8d;
+}
+
+.mic-icon {
+  font-size: 4rem;
+  margin-bottom: 16px;
+}
+
+.permission-request h3 {
+  color: #2c3e50;
+  margin: 0 0 8px 0;
+}
+
+.permission-request p {
+  margin: 0 0 20px 0;
+}
+
+.permission-btn {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.permission-btn:hover {
+  transform: translateY(-1px);
+}
+
+.error-message {
+  background: #fee;
+  color: #c33;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-top: 16px;
+  border: 1px solid #fcc;
+  text-align: center;
+}
+
+.error-text {
+  color: #e74c3c !important;
+  font-size: 0.9rem;
+  margin: 8px 0 !important;
+}
+
+.recorder-tips {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #ecf0f1;
+}
+
+.recorder-tips h4 {
+  color: #2c3e50;
+  margin: 0 0 12px 0;
+  font-size: 1rem;
+}
+
+.recorder-tips ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #7f8c8d;
+}
+
+.recorder-tips li {
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .audio-recorder {
+    padding: 16px;
+  }
+  
+  .recorder-header {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+  
+  .audio-visualizer {
+    height: 60px;
+  }
+  
+  .visualizer-container {
+    height: 40px;
+  }
+  
+  .record-btn {
+    width: 70px;
+    height: 70px;
+    font-size: 1.8rem;
+  }
+  
+  .timer {
+    font-size: 1.3rem;
+  }
+  
+  .audio-level {
+    max-width: 250px;
+  }
+}
