@@ -96,10 +96,15 @@ const Dashboard = () => {
               <h1 className="dashboard-title">Dashboard</h1>
               <p className="dashboard-subtitle">Welcome back, {user?.name || user?.email}</p>
             </div>
-            <button className="btn btn-primary" onClick={createNewSession}>
-              <span className="btn-icon">+</span>
-              New Session
-            </button>
+            <div className="dashboard-header-actions">
+              <button className="btn btn-primary" onClick={createNewSession}>
+                <span className="btn-icon">+</span>
+                New Session
+              </button>
+              <button className="btn btn-secondary" onClick={handleLogout} style={{ marginLeft: '1rem' }}>
+                Logout
+              </button>
+            </div>
           </div>
         </div>
       </header>
